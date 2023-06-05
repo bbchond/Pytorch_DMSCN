@@ -81,7 +81,7 @@ class ConvAE(object):
         self.reconst_cost_x = 0.6* tf.reduce_sum(tf.pow(tf.subtract(self.x_r['0'], self.x['0']), 2.0))
         for i in range(1, self.num_modalities):
             modality = str(i)
-            self.reconst_cost_x = self.reconst_cost_x +  0.1*tf.reduce_sum(tf.pow(tf.subtract(self.x_r[modality], self.x[modality]), 2.0))
+            self.reconst_cost_x = self.reconst_cost_x + 0.1 * tf.reduce_sum(tf.pow(tf.subtract(self.x_r[modality], self.x[modality]), 2.0))
 
 
         self.cost = self.reconst_cost_x
@@ -261,13 +261,13 @@ def train_face(Img, CAE, n_input, batch_size,num_modalities,max_epochs):
 
     #CAE.restore()
     # train the network
-    while it<max_epochs:
+    while it < max_epochs:
         batch, _index_in_epoch, _epochs =  next_batch(Img, _index_in_epoch , batch_size,num_modalities, _epochs)
         for i in range(0,num_modalities):
             batch[str(i)] = np.reshape(batch[str(i)],[batch_size,n_input[0],n_input[1],1])
         cost = CAE.partial_fit(batch)
         it = it +1
-        avg_cost = cost/(batch_size)
+        avg_cost = cost / (batch_size)
         if it % display_step == 0:
             print ("epoch: %.1d" % _epochs)
             print  ("cost: %.8f" % avg_cost)
