@@ -11,8 +11,7 @@ This repository contains the Pytorch implementation of the paper "Deep multimoda
 
 ![fig1](https://user-images.githubusercontent.com/18729506/45457918-2f195c00-b6bf-11e8-908b-01817a5e3387.jpg)
 
-For more details, please refer the origin repo: [(https://github.com/panji1990/Deep-subspace-clustering-networks)](https://github.com/mahdiabavisani/Deep-multimodal-subspace-clustering-networks)
-
+For more details, please refer the origin repo: https://github.com/mahdiabavisani/Deep-multimodal-subspace-clustering-networks.
 ## Citation
 
 Please use the following to refer to this work in publications:
